@@ -7,16 +7,6 @@ This repository contains multiple components developed for the Standard Chartere
 - **Verification Transcription:** Handles text extraction and validation.  
 - **Fintech Chatbot:** Financial assistant chatbot with NLP capabilities.  
 
-## 📂 **Repository Structure**  
-```
-- `/Aadhaar Card Recognition & Verification System` – Aadhaar verification logic.  
-- `/Picture_reader (Copy)` – Image reading functionality.  
-- `/Verification_transcription` – Text extraction and validation.  
-- `/fintech_chatbot (Copy)` – Fintech chatbot code.  
-- `README.md` – Project documentation.  
-- `requirements.txt` – Dependencies.
-```
-
 ## ⚙️ **Technologies Used**
 - Python  
 - OpenCV  
