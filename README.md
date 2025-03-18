@@ -6,6 +6,7 @@ This repository contains multiple components developed for the Standard Chartere
 - **Picture Reader:** Reads and processes images for document verification.  
 - **Verification Transcription:** Handles text extraction and validation.  
 - **Fintech Chatbot:** Financial assistant chatbot with NLP capabilities.  
+- **Ollama Image Analysis Module:** Uses **Ollama API with the LLaVA model** to analyze Aadhaar images and generate textual descriptions.  
 
 ---
 
@@ -21,6 +22,14 @@ This repository contains multiple components developed for the Standard Chartere
 ### 📄 **Intelligent Document Parsing**
 - When tested with an **external Aadhaar sample**, the CNN successfully identified the **Aadhaar number and name**.  
 - Extracts and validates key details using OCR and rule-based verification.  
+
+### 🔍 **Ollama Image Analysis**
+- Uses the **Ollama API with the LLaVA model** to analyze Aadhaar images.  
+- Generates **textual descriptions** of the Aadhaar card, identifying key details such as:  
+  - **Profile picture**  
+  - **Name, DOB, and gender**  
+  - **Unique ID number and QR code**  
+  - **Multi-language text and government emblem**  
 
 ### ⚙️ **Multi-Threaded Processing**
 - **Parallel processing** handles face verification, transcription, and scoring concurrently.  
@@ -39,6 +48,8 @@ This repository contains multiple components developed for the Standard Chartere
 - TensorFlow/Keras  
 - PaddleOCR  
 - NLP Libraries  
+- Ollama API  
+- LLaVA Model  
 
 ---
 
@@ -57,11 +68,17 @@ cd Standard_Charted_hackathon_repo
 ### **2️⃣ Install Dependencies**
 ```bash
 pip install -r requirements.txt
+pip install ollama
 ```
 
 ### **3️⃣ Run the AI Chatbot**
 ```bash
 python fintech_chatbot/main.py
+```
+
+### **4️⃣ Run Ollama Image Analysis Module**
+```bash
+python image_analysis.py --image_path /path/to/aadhaar_image.jpg
 ```
 
 ---
@@ -73,6 +90,7 @@ python fintech_chatbot/main.py
  ├── 📂 Picture_reader/                  # Image processing for document verification  
  ├── 📂 Verification_transcription/     # Speech-to-text for user verification  
  ├── 📂 fintech_chatbot/                # AI chatbot guiding users through banking processes  
+ ├── 📂 ollama_image_analysis/          # Image analysis module with Ollama API  
  ├── 📄 README.md                        # Project Overview  
  ├── 📄 requirements.txt                 # Dependencies  
 ```
@@ -92,7 +110,14 @@ python fintech_chatbot/main.py
 - **Aadhaar Card Recognition System** processes **Aadhaar, PAN, and income proof**.  
 - Uses **OCR & AI-based classification** to extract data.  
 
-### **4️⃣ Loan Eligibility Check**
+### **4️⃣ Ollama Image Analysis**
+- The **Ollama API with LLaVA model** processes the Aadhaar image.  
+- Generates a detailed textual description of the card, including:  
+  - **Personal details**  
+  - **Document format**  
+  - **QR code and multi-language content**  
+
+### **5️⃣ Loan Eligibility Check**
 - `loan_eligibility_checker.py` applies **rule-based AI** to evaluate:  
   - Age, income, employment type, and credit score.  
   - Provides **instant loan decision**: ✅ Approved | ❌ Rejected | 🔄 More Info Needed.  
@@ -111,7 +136,10 @@ python fintech_chatbot/main.py
 3. **Document Upload & Parsing:**  
    - Extracts and validates Aadhaar and PAN details using OCR.  
 
-4. **Loan Eligibility Evaluation:**  
+4. **Ollama Image Analysis:**  
+   - Adds a second layer of verification with **textual descriptions** of Aadhaar images.  
+
+5. **Loan Eligibility Evaluation:**  
    - Rule-based eligibility check provides instant feedback.  
 
 ---
@@ -121,3 +149,13 @@ python fintech_chatbot/main.py
 - ✅ **Integration with Core Banking Systems**  
 - ✅ **Automated Loan Document E-Signing**  
 - ✅ **ML-Powered Eligibility Scoring** for more accurate predictions  
+- ✅ **Document Authenticity Detection** using advanced AI  
+
+---
+
+## 🛠️ **Contributors**
+- **[Your Name]** – OCR & Facial Verification  
+- **Shrinjita Paul** – Loan Eligibility Model & Aadhar Verification CNN  
+- **[Teammate's Name]** – 
+- **[Teammate's Name]** – Ollama Image Analysis Integration
+- **[Teammate's Name]** – Ollama Image Analysis Integration  
