@@ -7,10 +7,12 @@ This repository contains multiple components developed for the Standard Chartere
 - **Verification Transcription:** Handles text extraction and validation.  
 - **Fintech Chatbot:** Financial assistant chatbot with NLP capabilities.  
 - **Ollama Image Analysis Module:** Uses **Ollama API with the LLaVA model** to analyze Aadhaar images and generate textual descriptions.  
+- **Face Detection & Recognition Module:** Leverages **MTCNN and custom CNN architecture** for facial verification.  
 
 ---
 
-## **🔹 Key Features**
+## 🔹 **Key Features**
+
 ### 🎥 **Real-Time Facial Verification**
 - Captures images periodically (every **10 seconds**) to verify identity consistency.  
 - Ensures continuous applicant validation throughout the process.  
@@ -31,9 +33,10 @@ This repository contains multiple components developed for the Standard Chartere
   - **Unique ID number and QR code**  
   - **Multi-language text and government emblem**  
 
-### ⚙️ **Multi-Threaded Processing**
-- **Parallel processing** handles face verification, transcription, and scoring concurrently.  
-- Improves efficiency and reduces processing time.  
+### 🔥 **Face Detection & Recognition**
+- **MTCNN-based face detection** for efficient multi-scale face recognition.  
+- Custom **CNN architecture** for improved accuracy in facial verification.  
+- **Multi-threaded processing** handles face recognition concurrently with speech transcription.  
 
 ### 🚀 **Rule-Based Loan Eligibility Scoring**
 - Uses a **rule-based system** to evaluate eligibility factors.  
@@ -42,23 +45,26 @@ This repository contains multiple components developed for the Standard Chartere
 ---
 
 ## 🛠️ **Technologies Used**
-- Python  
-- OpenCV  
-- Flask  
-- TensorFlow/Keras  
-- PaddleOCR  
-- NLP Libraries  
-- Ollama API  
-- LLaVA Model  
+- **Python**  
+- **OpenCV**  
+- **Flask**  
+- **TensorFlow/Keras**  
+- **PaddleOCR**  
+- **NLP Libraries**  
+- **Ollama API**  
+- **LLaVA Model**  
+- **MTCNN** for face detection  
+- **Custom CNN architecture**  
 
 ---
 
-## **🔹 Workflow Diagram**
+## 🔹 **Workflow Diagram**
 ![Workflow](https://github.com/user-attachments/assets/ebb2cd81-1ef3-4dd9-9e19-1f7e3f304429)
 
 ---
 
 ## ✅ **Installation & Setup**
+
 ### **1️⃣ Clone the Repository**
 ```bash
 git clone https://github.com/alikhan37544/Standard_Charted_hackathon_repo.git
@@ -81,6 +87,11 @@ python fintech_chatbot/main.py
 python image_analysis.py --image_path /path/to/aadhaar_image.jpg
 ```
 
+### **5️⃣ Run MTCNN Face Detection & Recognition**
+```bash
+python detect.py
+```
+
 ---
 
 ## 📂 **File Structure**
@@ -91,6 +102,7 @@ python image_analysis.py --image_path /path/to/aadhaar_image.jpg
  ├── 📂 Verification_transcription/     # Speech-to-text for user verification  
  ├── 📂 fintech_chatbot/                # AI chatbot guiding users through banking processes  
  ├── 📂 ollama_image_analysis/          # Image analysis module with Ollama API  
+ ├── 📂 face_recognition/               # MTCNN-based face detection & CNN recognition   
  ├── 📄 README.md                        # Project Overview  
  ├── 📄 requirements.txt                 # Dependencies  
 ```
@@ -98,6 +110,7 @@ python image_analysis.py --image_path /path/to/aadhaar_image.jpg
 ---
 
 ## 🚀 **How It Works**
+
 ### **1️⃣ Chatbot Interaction**
 - User initiates conversation via chatbot (`fintech_chatbot/main.py`).  
 - AI **guides them through the loan application process**.  
@@ -117,7 +130,11 @@ python image_analysis.py --image_path /path/to/aadhaar_image.jpg
   - **Document format**  
   - **QR code and multi-language content**  
 
-### **5️⃣ Loan Eligibility Check**
+### **5️⃣ Face Detection & Recognition**
+- `detect.py` uses **MTCNN for face detection**.  
+- Recognizes and verifies faces using the **custom CNN architecture**.  
+
+### **6️⃣ Loan Eligibility Check**
 - `loan_eligibility_checker.py` applies **rule-based AI** to evaluate:  
   - Age, income, employment type, and credit score.  
   - Provides **instant loan decision**: ✅ Approved | ❌ Rejected | 🔄 More Info Needed.  
@@ -139,7 +156,10 @@ python image_analysis.py --image_path /path/to/aadhaar_image.jpg
 4. **Ollama Image Analysis:**  
    - Adds a second layer of verification with **textual descriptions** of Aadhaar images.  
 
-5. **Loan Eligibility Evaluation:**  
+5. **Face Recognition:**  
+   - Verifies the applicant's face consistency throughout the process.  
+
+6. **Loan Eligibility Evaluation:**  
    - Rule-based eligibility check provides instant feedback.  
 
 ---
@@ -150,12 +170,13 @@ python image_analysis.py --image_path /path/to/aadhaar_image.jpg
 - ✅ **Automated Loan Document E-Signing**  
 - ✅ **ML-Powered Eligibility Scoring** for more accurate predictions  
 - ✅ **Document Authenticity Detection** using advanced AI  
+- ✅ **Fraud Detection Module** leveraging behavioral analytics  
 
 ---
 
 ## 🛠️ **Contributors**
+- **Ali Khan** – 
 - **Pragatish A M** – Transcription & Facial Verification  
-- **Shrinjita Paul** – Loan Eligibility Model & Aadhar Verification CNN  
-- **[Teammate's Name]** – 
-- **[Teammate's Name]** – Ollama Image Analysis Integration
-- **[Teammate's Name]** – Ollama Image Analysis Integration  
+- **Shrinjita Paul** – Loan Eligibility Model & Aadhar Verification CNN
+- **Shreeharini S** –
+- **Koushik Babu** -
