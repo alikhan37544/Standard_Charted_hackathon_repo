@@ -85,27 +85,6 @@ python fintech_chatbot/main.py
 
 ---
 
-## **🔹 Requirements**
-Below is an **accurate** `requirements.txt`, based on your uploaded files.
-
-### **📌 `requirements.txt`**
-```
-ollama
-opencv-python
-numpy
-pandas
-scikit-learn
-tensorflow
-paddleocr
-pytesseract
-deepface
-speechrecognition
-pillow
-tkinter
-```
-
----
-
 ## **🔹 Future Enhancements**
 🚀 **Real-time Loan Offer Suggestions**  
 🚀 **Integration with Core Banking Systems**  
