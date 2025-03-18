@@ -154,7 +154,7 @@ python image_analysis.py --image_path /path/to/aadhaar_image.jpg
 ---
 
 ## 🛠️ **Contributors**
-- **[Your Name]** – OCR & Facial Verification  
+- **Pragatish A M** – Transcription & Facial Verification  
 - **Shrinjita Paul** – Loan Eligibility Model & Aadhar Verification CNN  
 - **[Teammate's Name]** – 
 - **[Teammate's Name]** – Ollama Image Analysis Integration
