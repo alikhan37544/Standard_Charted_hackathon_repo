@@ -6,3 +6,13 @@ paddlepaddle
 paddleocr
 regex
 spacy
+Flask==2.2.3
+OpenCV-Python==4.8.0.76
+Pillow==10.0.1
+numpy==1.26.3
+pytesseract==0.3.10
+tensorflow==2.15.0
+transformers==4.37.2
+torch==2.1.2
+nltk==3.8.1
+scikit-learn==1.4.2
