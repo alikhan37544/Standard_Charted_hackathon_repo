@@ -2,7 +2,7 @@ import sys
 import yaml
 from argparse import ArgumentParser
 from tqdm.auto import tqdm
-import imageio
+import imageio.v2 as imageio_v2
 import numpy as np
 from skimage.transform import resize
 from skimage import img_as_ubyte
@@ -124,8 +124,8 @@ if __name__ == "__main__":
 
     opt = parser.parse_args()
 
-    source_image = imageio.imread(opt.source_image)
-    reader = imageio.get_reader(opt.driving_video)
+    source_image = imageio_v2.imread(opt.source_image)
+    reader = imageio_v2.get_reader(opt.driving_video)
     fps = reader.get_meta_data()['fps']
     driving_video = []
     try:
@@ -149,7 +149,7 @@ if __name__ == "__main__":
         predictions = predictions_backward[::-1] + predictions_forward[1:]
     else:
         predictions = make_animation(source_image, driving_video, generator, kp_detector, relative=opt.relative, adapt_movement_scale=opt.adapt_scale, cpu=opt.cpu)
-    imageio.mimsave(opt.result_video, [img_as_ubyte(frame) for frame in predictions], fps=fps)
+    imageio_v2.mimsave(opt.result_video, [img_as_ubyte(frame) for frame in predictions], fps=fps)
 
     if opt.audio:
         try:
