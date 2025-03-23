@@ -34,7 +34,7 @@ class FintechChatbot:
             # Add domain context to the user input
             context = f"You are a {self.current_domain}. {user_input}"
             response = ollama.generate(
-                model="deepseek-r1:latest",
+                model="tinyllama",
                 prompt=context
             )
             return response["response"]
