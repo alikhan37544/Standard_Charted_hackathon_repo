@@ -1,5 +1,5 @@
 import streamlit as st
-import imageio
+import imageio.v2 as imageio
 import numpy as np
 import skimage.transform
 import os
