@@ -390,11 +390,16 @@
                         <label for="additionalInfo">Additional Information</label>
                         <textarea id="additionalInfo" rows="4"></textarea>
                     </div>
-                    
-                    <button type="submit" class="submit-btn">Submit Application</button>
-                </form>
+                    <div class="form-group">
+                        <label for="creditScore">Credit Score</label>
+                        <input type="number" id="creditScore" min="300" max="900" required>
+                    </div>
+                <div id="result" class="result"></div>
+                <button type="button" onclick="checkEligibility()" class="submit-btn">Check Eligibility</button>
+            </form>
             </div>
-        </div>
+</div>
+</div>
     </section>
 
     <footer>
@@ -467,6 +472,66 @@
                 alert('Thank you for your application! A representative will contact you shortly.');
             });
         });
+        function checkEligibility() {
+        let age = parseInt(document.getElementById("age").value);
+        let income = parseInt(document.getElementById("income").value);
+        let employmentType = document.getElementById("employment").value;
+        let creditScore = parseInt(document.getElementById("creditScore").value);
+        let loanType = document.getElementById("loanType").value;
+        let resultDiv = document.getElementById("result");
+
+        if (!loanType) {
+            resultDiv.innerHTML = "Please select a loan type.";
+            resultDiv.style.color = "red";
+            return;
+        }
+
+        if (loanType === "personal") {
+            if (age < 22 || age > 58) {
+                resultDiv.innerHTML = "Age must be between 22 and 58 years for a personal loan.";
+                resultDiv.style.color = "red";
+                return;
+            }
+            if (employmentType === "salaried" && income < 22000) {
+                resultDiv.innerHTML = "Minimum monthly income for salaried individuals is ₹22,000.";
+                resultDiv.style.color = "red";
+                return;
+            }
+            if (employmentType === "self-employed" && income < 25000) {
+                resultDiv.innerHTML = "Minimum monthly income for self-employed individuals is ₹25,000.";
+                resultDiv.style.color = "red";
+                return;
+            }
+            if (creditScore < 650) {
+                resultDiv.innerHTML = "A minimum credit score of 650 is required for a personal loan.";
+                resultDiv.style.color = "red";
+                return;
+            }
+            resultDiv.innerHTML = "Congratulations! You are eligible for a personal loan.";
+            resultDiv.style.color = "green";
+        } else if (loanType === "home") {
+            if (age < 23 || age > 70) {
+                resultDiv.innerHTML = "Age must be between 23 and 70 years for a home loan.";
+                resultDiv.style.color = "red";
+                return;
+            }
+            if (income < 50000) {
+                resultDiv.innerHTML = "Minimum monthly income for a home loan is ₹50,000.";
+                resultDiv.style.color = "red";
+                return;
+            }
+            if (creditScore < 750) {
+                resultDiv.innerHTML = "A minimum credit score of 750 is required for a home loan.";
+                resultDiv.style.color = "red";
+                return;
+            }
+            resultDiv.innerHTML = "Congratulations! You are eligible for a home loan.";
+            resultDiv.style.color = "green";
+        } else {
+            resultDiv.innerHTML = "Invalid loan type selected.";
+            resultDiv.style.color = "red";
+        }
+    }
     </script>
 </body>
 </html>
